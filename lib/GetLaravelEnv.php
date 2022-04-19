@@ -20,6 +20,7 @@ class GetLaravelEnv
         while(! feof($fn))  {
         $result = fgets($fn);
         $result = str_replace("\r\n","",$result);
+        $result = trim($result);
         $ignore = substr($result, 0,1);
         if($result!='' AND $ignore!='#'){
             $gevar = explode("=", $result,2);
